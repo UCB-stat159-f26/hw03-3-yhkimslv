@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tenniscareer"
+version = "0.1.0"
+authors = [
+	{name="Yoonha Kim", email="yhkimslv@berkeley.edu"}
+]
+description = "Retrieve and visualize tennis career matches"
+readme = "README.md"
+
+requires-python = ">=3.10"
+dependencies = [
+	"pandas",
+	"matplotlib"
+]
+
+license = "BSD-3-Clause"
+license-files = ["LICEN[CS]E*"]
+
+classifiers = [
+	"Programming Language :: Python :: 3",
+	"Operating System :: OS Independent"
+]
+
+keywords = ["tennis", "visualization"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.urls]
+Homepage = "https://github.com/UCB-stat159-f26/hw03-3-yhkimslv"
+Issues = "https://github.com/UCB-stat159-f26/hw03-3-yhkimslv/issues"
+
+[tool.setuptools]
+packages = ["tenniscareer"]
