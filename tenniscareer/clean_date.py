@@ -27,7 +27,8 @@ def _opponent_age(value, event_date):
 def _clean_data(rows, player_dob):
     data = pd.DataFrame(rows).drop_duplicates()[[0, 4, 11, 16]].copy()
     data.columns = ["date", "result", "opponent", "opponent_age_raw"]
-
+    
+    data["date"] = pd.to_datetime(data["date"], format="%Y%m%d", errors="coerce")
     data["player_age"] = (data["date"] - pd.Timestamp(player_dob)).dt.days / 365.25
 
     pairs = zip(data["opponent_age_raw"], data["date"])
